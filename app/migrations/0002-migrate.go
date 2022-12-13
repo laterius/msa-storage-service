@@ -8,7 +8,7 @@ import (
 )
 
 func (g Good) TableName() string {
-	return "couriers"
+	return "goods"
 }
 
 type Good struct {

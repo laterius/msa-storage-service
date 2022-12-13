@@ -42,5 +42,5 @@ func (s *Service) Reserve(orderId uuid.UUID, goods []uuid.UUID) error {
 }
 
 func (s *Service) CancelReservation(orderId uuid.UUID) error {
-	return s.db.Delete(&Reservations{}, orderId).Error
+	return s.db.Delete(&Reservations{OrderId: orderId}).Error
 }
