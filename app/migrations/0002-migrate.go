@@ -26,9 +26,9 @@ func init() {
 	}
 
 	goods := []Good{
-		{Id: uuid.New(), Name: "good 1", Price: 100},
-		{Id: uuid.New(), Name: "good 2", Price: 200},
-		{Id: uuid.New(), Name: "good 3", Price: 300},
+		{Id: uuid.MustParse("497a545c-24df-4f9c-aab3-5a779c76a4f0"), Name: "good 1", Price: 100},
+		{Id: uuid.MustParse("6b1641ae-3f10-4f4d-86a1-789731f24710"), Name: "good 2", Price: 200},
+		{Id: uuid.MustParse("2077de75-a757-4f69-b5f3-2a52132afb52"), Name: "good 3", Price: 300},
 	}
 
 	mx = &gormigrate.Migration{
