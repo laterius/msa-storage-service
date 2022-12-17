@@ -15,7 +15,7 @@ func NewService(db *gorm.DB) Service {
 
 //Реализация методов обращения в базу данных
 
-type Reservations struct {
+type OrderReservations struct {
 	OrderId uuid.UUID `json:"orderId" gorm:"type:uuid; not null"`
 	GoodId  uuid.UUID `json:"goodId" gorm:"type:uuid; not null"`
 }
@@ -28,7 +28,7 @@ type Good struct {
 
 func (s *Service) Reserve(orderId uuid.UUID, goods []uuid.UUID) error {
 	for _, goodId := range goods {
-		err := s.db.Create(Reservations{
+		err := s.db.Create(OrderReservations{
 			OrderId: orderId,
 			GoodId:  goodId,
 		}).Error
@@ -42,5 +42,5 @@ func (s *Service) Reserve(orderId uuid.UUID, goods []uuid.UUID) error {
 }
 
 func (s *Service) CancelReservation(orderId uuid.UUID) error {
-	return s.db.Delete(&Reservations{}, orderId).Error
+	return s.db.Delete(&OrderReservations{}, orderId).Error
 }
