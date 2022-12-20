@@ -9,8 +9,8 @@ import (
 func init() {
 	mx := &gormigrate.Migration{
 		ID:       "0004",
-		Migrate:  mixture.CreateTableM(&service.OrderReservations{}),
-		Rollback: mixture.DropTableR(&service.OrderReservations{}),
+		Migrate:  mixture.CreateTableM(&service.Orderreservations{}),
+		Rollback: mixture.DropTableR(&service.Orderreservations{}),
 	}
 
 	mixture.Add(mixture.ForAnyEnv, mx)

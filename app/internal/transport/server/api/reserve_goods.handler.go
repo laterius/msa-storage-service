@@ -11,7 +11,7 @@ import (
 func ReserveGoodsHandler(service service.Service) func(c *gin.Context) {
 	type Body struct {
 		OrderID uuid.UUID   `json:"order_id"`
-		GoodIds []uuid.UUID `json:"good_ids"`
+		GoodIds []uuid.UUID `json:"goods_ids"`
 	}
 
 	return func(c *gin.Context) {
